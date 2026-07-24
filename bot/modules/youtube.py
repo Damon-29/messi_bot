@@ -27,7 +27,7 @@ class YouTubeModule(BaseModule):
                     source="youtube",
                     title=entry.title,
                     url=entry.link,
-                    body=entry.summary,
+                    body="",
                     author=entry.author,
                     timestamp=entry.published,
                     thumbnail=thumbnail,
