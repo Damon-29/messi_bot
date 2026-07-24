@@ -2,6 +2,7 @@ rss:
   - name: Hacker News
     url: https://feeds.feedburner.com/TheHackersNews
 
-youtube: []
+youtube: 
+  - UC_x5XG1OV2P6uZZ5FSM9Ttw
 
 reddit: []
