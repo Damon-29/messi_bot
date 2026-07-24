@@ -1,3 +1,7 @@
+from bot.services.discord import send_post
+from bot.state import exists, add
+
+
 class Bot:
     def __init__(self, modules):
         self.modules = modules
