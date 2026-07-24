@@ -1,10 +1,13 @@
-from bot.state import exists, add
+from bot.modules.rss import RSSModule
 
-MODULE = "reddit"
-POST_ID = "12345"
 
-if exists(MODULE, POST_ID):
-    print("Already exists.")
-else:
-    print("New post.")
-    add(MODULE, POST_ID)
+def main():
+    module = RSSModule()
+
+    posts = module.fetch()
+
+    print(f"Fetched {len(posts)} posts")
+
+
+if __name__ == "__main__":
+    main()
