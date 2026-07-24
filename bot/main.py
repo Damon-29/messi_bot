@@ -6,8 +6,12 @@ from bot.modules.rss import RSSModule
 def main():
     modules = []
 
-    for url in CONFIG.get("rss", []):
-        modules.append(RSSModule(url))
+    for feed in CONFIG.get("rss", []):
+        modules.append(
+            RSSModule(
+                url=feed["url"]
+            )
+        )
 
     bot = Bot(modules)
     bot.run()
