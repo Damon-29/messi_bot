@@ -13,7 +13,9 @@ def main():
         if exists("rss", post.id):
             continue
 
-        print(f"NEW: {post.title}")
+        from bot.services.discord import send_post
+
+        send_post(post)
 
         add("rss", post.id)
         new_posts += 1
