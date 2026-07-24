@@ -3,9 +3,6 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 from bot.config import DISCORD_WEBHOOK
 from bot.models.post import Post
 
-if "/shorts/" in entry.link:
-    continue
-
 
 def send_post(post: Post):
     webhook = DiscordWebhook(url=DISCORD_WEBHOOK)
@@ -19,10 +16,7 @@ def send_post(post: Post):
     if post.thumbnail:
         embed.set_image(url=post.thumbnail)
 
-    if post.images:
-        embed.set_image(url=post.images[0])
-
-   footer = post.author if post.author else post.source.upper()
+    footer = post.author if post.author else post.source.upper()
 
     if post.timestamp:
         footer += f" • {post.timestamp}"
