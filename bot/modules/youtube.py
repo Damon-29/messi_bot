@@ -16,6 +16,11 @@ class YouTubeModule(BaseModule):
         posts = []
 
         for entry in feed.entries:
+
+            # Skip YouTube Shorts
+            if "/shorts/" in entry.link:
+                continue
+
             thumbnail = ""
 
             if "media_thumbnail" in entry:
