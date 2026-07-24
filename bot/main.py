@@ -2,11 +2,16 @@ from bot.modules.rss import RSSModule
 
 
 def main():
-    module = RSSModule()
+    rss = RSSModule("https://feeds.feedburner.com/TheHackersNews")
 
-    posts = module.fetch()
+    posts = rss.fetch()
 
-    print(f"Fetched {len(posts)} posts")
+    print(f"Fetched {len(posts)} posts\n")
+
+    for post in posts[:5]:
+        print(post.title)
+        print(post.url)
+        print("-" * 50)
 
 
 if __name__ == "__main__":
