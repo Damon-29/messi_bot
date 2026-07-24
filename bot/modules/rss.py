@@ -5,8 +5,9 @@ from bot.modules.base import BaseModule
 
 
 class RSSModule(BaseModule):
-    def __init__(self, url: str):
+    def __init__(self, url: str, source: str = "rss"):
         self.url = url
+        self.source = source
 
     def fetch(self):
         feed = feedparser.parse(self.url)
@@ -17,7 +18,7 @@ class RSSModule(BaseModule):
             posts.append(
                 Post(
                     id=entry.id if "id" in entry else entry.link,
-                    source="rss",
+                    source=self.source,
                     title=entry.title,
                     url=entry.link,
                     body=entry.summary if "summary" in entry else "",
