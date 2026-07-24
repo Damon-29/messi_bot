@@ -1,4 +1,5 @@
 from bot.modules.rss import RSSModule
+from bot.state import exists, add
 
 
 def main():
@@ -6,12 +7,18 @@ def main():
 
     posts = rss.fetch()
 
-    print(f"Fetched {len(posts)} posts\n")
+    new_posts = 0
 
-    for post in posts[:5]:
-        print(post.title)
-        print(post.url)
-        print("-" * 50)
+    for post in posts:
+        if exists("rss", post.id):
+            continue
+
+        print(f"NEW: {post.title}")
+
+        add("rss", post.id)
+        new_posts += 1
+
+    print(f"\nFound {new_posts} new posts.")
 
 
 if __name__ == "__main__":
