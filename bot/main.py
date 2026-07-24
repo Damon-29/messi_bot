@@ -1,13 +1,11 @@
-from bot.bot import Bot
-from bot.config import CONFIG
-from bot.modules.registry import load_modules
+from bot.modules.youtube import YouTubeModule
 
 
 def main():
-    modules = load_modules(CONFIG)
+    # Replace with any channel ID you want to inspect
+    yt = YouTubeModule("UC_x5XG1OV2P6uZZ5FSM9Ttw")
 
-    bot = Bot(modules)
-    bot.run()
+    yt.debug()
 
 
 if __name__ == "__main__":
