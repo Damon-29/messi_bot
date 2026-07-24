@@ -1,1 +1,5 @@
-
+requests
+discord-webhook
+feedparser
+praw
+PyYAML
