@@ -5,11 +5,19 @@ from bot.models.post import Post
 
 
 def send_post(post: Post):
-    webhook = DiscordWebhook(url=DISCORD_WEBHOOK)
-
-    # Native Discord preview for YouTube
+    #
+    # Native YouTube preview
+    #
     if post.source == "youtube":
+        webhook = DiscordWebhook(url=DISCORD_WEBHOOK)
         webhook.content = post.url
+        webhook.execute()
+        return
+
+    #
+    # Everything else uses embeds
+    #
+    webhook = DiscordWebhook(url=DISCORD_WEBHOOK)
 
     embed = DiscordEmbed(
         title=post.title,
