@@ -1,14 +1,15 @@
 from bot.bot import Bot
+from bot.config import CONFIG
 from bot.modules.rss import RSSModule
 
 
 def main():
-    bot = Bot(
-        modules=[
-            RSSModule("https://feeds.feedburner.com/TheHackersNews"),
-        ]
-    )
+    modules = []
 
+    for url in CONFIG.get("rss", []):
+        modules.append(RSSModule(url))
+
+    bot = Bot(modules)
     bot.run()
 
 
