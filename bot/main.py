@@ -1,5 +1,6 @@
 from bot.modules.rss import RSSModule
 from bot.state import exists, add
+from bot.services.discord import send_post
 
 
 def main():
@@ -11,16 +12,16 @@ def main():
 
     for post in posts:
         if exists("rss", post.id):
+            print(f"⏩ Skipping: {post.title}")
             continue
 
-        from bot.services.discord import send_post
+        print(f"📨 Sending: {post.title}")
 
         send_post(post)
-
         add("rss", post.id)
         new_posts += 1
 
-    print(f"\nFound {new_posts} new posts.")
+    print(f"\n✅ Found {new_posts} new posts.")
 
 
 if __name__ == "__main__":
