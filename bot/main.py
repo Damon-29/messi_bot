@@ -1,17 +1,10 @@
 from bot.bot import Bot
 from bot.config import CONFIG
-from bot.modules.rss import RSSModule
+from bot.modules.registry import load_modules
 
 
 def main():
-    modules = []
-
-    for feed in CONFIG.get("rss", []):
-        modules.append(
-            RSSModule(
-                url=feed["url"]
-            )
-        )
+    modules = load_modules(CONFIG)
 
     bot = Bot(modules)
     bot.run()
