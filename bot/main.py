@@ -1,9 +1,10 @@
-from bot.state import has_post, add_post
+from bot.state import exists, add
 
-POST_ID = "reddit_123"
+MODULE = "reddit"
+POST_ID = "12345"
 
-if has_post(POST_ID):
-    print("Already posted.")
+if exists(MODULE, POST_ID):
+    print("Already exists.")
 else:
     print("New post.")
-    add_post(POST_ID)
+    add(MODULE, POST_ID)
