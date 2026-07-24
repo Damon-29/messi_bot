@@ -2,7 +2,12 @@
     "reddit": [
         "12345"
     ],
-    "youtube": [],
+    "youtube": [
+        "JRArFxEfyQU",
+        "iOK1-b_9Dlg",
+        "8I7wr2hYFec",
+        "yGHi5V4sVkc"
+    ],
     "rss": [
         "https://thehackernews.com/2026/07/bluenoroff-zoom-phishing-kit-profiles.html",
         "https://thehackernews.com/2026/07/certighost-exploit-lets-low-privileged.html",
