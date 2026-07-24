@@ -14,7 +14,7 @@ def send_post(post: Post):
     )
 
     if post.thumbnail:
-        embed.set_thumbnail(url=post.thumbnail)
+        embed.set_image(url=post.thumbnail)
 
     if post.images:
         embed.set_image(url=post.images[0])
