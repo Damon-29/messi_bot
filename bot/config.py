@@ -1,7 +1,8 @@
 import os
+import yaml
 
 DISCORD_WEBHOOK = os.getenv("DISCORD_WEBHOOK")
 
-REDDIT_CLIENT_ID = os.getenv("REDDIT_CLIENT_ID")
-REDDIT_CLIENT_SECRET = os.getenv("REDDIT_CLIENT_SECRET")
-REDDIT_USER_AGENT = os.getenv("REDDIT_USER_AGENT")
+
+with open("config.yaml", "r", encoding="utf-8") as f:
+    CONFIG = yaml.safe_load(f)
