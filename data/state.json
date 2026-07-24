@@ -2,7 +2,23 @@
     "reddit": [
         "12345"
     ],
-    "youtube": [],
+    "youtube": [
+        "yt:video:NIDrPjeZ-jQ",
+        "yt:video:eiRlCVtzlm4",
+        "yt:video:JRArFxEfyQU",
+        "yt:video:T_YzKVRlRsQ",
+        "yt:video:iK-JE0ZbCfg",
+        "yt:video:AaWdVp_py4Y",
+        "yt:video:iOK1-b_9Dlg",
+        "yt:video:8I7wr2hYFec",
+        "yt:video:mgoNUC-tCAo",
+        "yt:video:wjy2q43TsTk",
+        "yt:video:Q1TfKyOcosk",
+        "yt:video:Q3ryjp64wK8",
+        "yt:video:8ZCeXQyavog",
+        "yt:video:yGHi5V4sVkc",
+        "yt:video:ObomOeoP47Y"
+    ],
     "rss": [
         "https://thehackernews.com/2026/07/bluenoroff-zoom-phishing-kit-profiles.html",
         "https://thehackernews.com/2026/07/certighost-exploit-lets-low-privileged.html",
